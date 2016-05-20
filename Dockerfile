@@ -18,5 +18,10 @@ RUN { \
 		echo 'opcache.fast_shutdown=1'; \
 		echo 'opcache.enable_cli=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+# Max file upload
+RUN { \
+		echo 'upload_max_filesize = 24M'; \
+		echo 'post_max_size = 24M'; \
+	} > /usr/local/etc/php/conf.d/file-upload.ini
 
 VOLUME /var/www/html
