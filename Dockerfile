@@ -62,7 +62,11 @@ RUN { \
 		echo 'ignore_repeated_errors = On'; \
 		echo 'ignore_repeated_source = Off'; \
 		echo 'html_errors = Off'; \
-	} > /usr/local/etc/php/conf.d/error-logging.ini	
+	} > /usr/local/etc/php/conf.d/error-logging.ini
+
+
+# Activate mod rewrite
+RUN a2enmod rewrite
 # Max file upload
 RUN { \
 		echo 'upload_max_filesize = 24M'; \
